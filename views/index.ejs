@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MongoDB Image Viewer</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <h1>Image Gallery</h1>
+    <div class="image-container">
+        <% if (images.length > 0) { %>
+            <% images.forEach(image => { %>
+                <div class="image-item">
+                    <img src="<%= image[Object.keys(image).find(key => key !== '_id')] %>" alt="Image from MongoDB">
+                </div>
+            <% }); %>
+        <% } else { %>
+            <p>No images found in the database.</p>
+        <% } %>
+    </div>
+</body>
+</html>
