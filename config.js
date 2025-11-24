@@ -1,7 +1,9 @@
 // Add your MongoDB connection details here
+require('dotenv').config();
+
 module.exports = {
-  MONGO_URI: 'mongodb+srv://hemantanandi2_db_user:hemantanandi2_db_user@cluster0.2yrgudj.mongodb.net/?appName=Cluster0',
-  DATABASE_NAME: 'test',
-  COLLECTION_NAME: 'images',
-  IMAGE_FIELD_NAME: 'originalImage'
+  MONGO_URI: process.env.MONGO_URI,
+  DATABASE_NAME: process.env.DATABASE_NAME,
+  COLLECTION_NAME: process.env.COLLECTION_NAME,
+  IMAGE_FIELD_NAME: process.env.IMAGE_FIELD_NAME
 };
